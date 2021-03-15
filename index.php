@@ -12,8 +12,9 @@ class Comicbook  {
   public $pages;
   public $format;
   public $color;
+  public $price;
 
-    public function __construct (title, editor, date, country, series, writers, artists, language, pages, format, color) {
+    public function __construct ($title, $editor, $date, $country, $series, $writers, $artists, $language, $pages, $format, $color) {
       $this->title = $title;
       $this->editor = $editor;
       $this->date = $date;
@@ -38,8 +39,9 @@ class Bluray  {
   public $director;
   public $cast;
   public $synopsis;
+  public $price;
 
-    public function __construct (title, type, year, genre, studio, director, cast, synopsis) {
+    public function __construct ($title, $type, $year, $genre, $studio, $director, $cast, $synopsis) {
       $this->title = $title;
       $this->type = $type;
       $this->year = $year;
@@ -62,7 +64,7 @@ class Actionfigures  {
   public $price;
 
 
-    public function __construct (modelname, productor, genre, character, material, variant, price) {
+    public function __construct ($modelname, $productor, $genre, $character, $material, $variant, $price) {
       $this->name = $name;
       $this->productor = $productor;
       $this->genre = $genre;
