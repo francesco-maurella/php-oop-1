@@ -42,7 +42,7 @@ class Bluray  {
       $this->title = $title;
       $this->type = $type;
       $this->year = $year;
-      $this->year = $country;
+      $this->country = $country;
       $this->genre = $genre;
       $this->studio = $studio;
       $this->director = $director;
