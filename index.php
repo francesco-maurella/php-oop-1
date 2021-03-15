@@ -32,39 +32,37 @@ class Bluray  {
   public $title;
   public $type;
   public $year;
+  public $country;
   public $genre;
   public $studio;
   public $director;
   public $cast;
-  public $synopsis;
 
-    public function __construct ($title, $type, $year, $genre, $studio, $director, $cast, $synopsis) {
+    public function __construct ($title, $type, $year, $country, $genre, $studio, $director, $cast) {
       $this->title = $title;
       $this->type = $type;
       $this->year = $year;
+      $this->year = $country;
       $this->genre = $genre;
       $this->studio = $studio;
       $this->director = $director;
       $this->cast = $cast;
-      $this->synopsis = $synopsis;
     }
 }
 
 class Actionfigures  {
   public $modelname;
   public $productor;
-  public $genre;
-  public $character;
+  public $type;
   public $material;
-  public $variant;
+  public $year;
 
-    public function __construct ($modelname, $productor, $genre, $character, $material, $variant) {
-      $this->name = $name;
+    public function __construct ($modelname, $productor, $type, $material, $year) {
+      $this->modelname = $modelname;
       $this->productor = $productor;
-      $this->genre = $genre;
-      $this->character = $character;
+      $this->type = $type;
       $this->material = $material;
-      $this->variant = $variant;
+      $this->year = $year;
     }
 }
 
@@ -75,7 +73,13 @@ $comic_003 = new Comicbook('Ultimate Spider-man #12', 'Spider-man', 'Marvel', '0
 $comic_004 = new Comicbook('V for Vendetta', 'One-shot', 'Vertigo', '01/1991', 'US', 'A. Moore', 'D. Lloyd', 'eng', 185, 'hard-cover', true);
 $comic_005 = new Comicbook('Dylan Dog #121', 'Dylan Dog', 'Bonelli', '01/1995', 'IT', 'T. Sclavi', 'B. Brindisi', 'ita', 98, 'trade-paperback', false);
 
+$bray_001 = new Bluray ('Man of Steel', 'movie', '2012', 'US', 'action', 'Warner Bros', 'Zack Snyder', 'Henry Cavill, Amy Adams');
+$bray_002 = new Bluray ('Dellamorte Dellamore', 'movie', '1995', 'IT', 'drama', 'Rai Cinema', 'Michele Soavi', 'Rupert Everett');
+$bray_003 = new Bluray ('Arrow - Season 1', 'tv', '2011', 'US', 'action', 'CW', 'Greg Berlanti', 'Stephen Ammel');
 
+$afigure_001 = new Actionfigures ('Hell Spawn', 'McFarlane Toys', 'statue', 'plastic', 2002);
+$afigure_001 = new Actionfigures ('Magic', 'Hasbro', 'cards', 'hard-paper', 2019);
+$afigure_001 = new Actionfigures ('Jason Funko Pop', 'Blumhouse', 'funkopop', 'plastic', 2017);
 
 echo '<b>Titolo</b> : ' . $comic_001->title . '<br />';
 echo '<b>Serie</b> : ' . $comic_001->series . '<br />';
