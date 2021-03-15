@@ -66,6 +66,27 @@ class Actionfigures  {
     }
 }
 
+class Catalogue  {
+  public $name;
+  public $comics = [];
+  public $blurays = [];
+  public $aFigures = [];
+
+  public function __construct ($name) {
+    $this->name = $name;
+  }
+
+  public function addComic($comic) {
+      $this->$comics[] = $comic;
+  }
+  public function addBluray($bluray) {
+      $this->blurays[] = $bluray;
+  }
+  public function addAFigure($aFigure) {
+      $this->aFigures[] = $aFigure;
+  }
+}
+
 
 $comic_001 = new Comicbook('Superman #159', 'Superman', 'DC', '02/2021', 'US', 'J. Strazinsky', 'R. Morales', 'eng', 32, 'comic', true);
 $comic_002 = new Comicbook('Batman #147', 'Batman', 'DC', '03/2021', 'US', 'G. Morrison', 'T. Daniels', 'eng', 32, 'comic', true);
@@ -80,6 +101,13 @@ $bray_003 = new Bluray ('Arrow - Season 1', 'tv', '2011', 'US', 'action', 'CW', 
 $afigure_001 = new Actionfigures ('Hell Spawn', 'McFarlane Toys', 'statue', 'plastic', 2002);
 $afigure_001 = new Actionfigures ('Magic', 'Hasbro', 'cards', 'hard-paper', 2019);
 $afigure_001 = new Actionfigures ('Jason Funko Pop', 'Blumhouse', 'funkopop', 'plastic', 2017);
+
+$comicsShop = new Catalogue ('Worlds Finest');
+
+$comicsShop->addComic($comic_001, $comic_002, $comic_003, $comic_004, $comic_005);
+$comicsShop->addBluray($bluray_001, $bluray_002, $bluray_003);
+$comicsShop->addAFigure($afigure_001, $afigure_002, $afigure_003);
+
 
 echo '<b>Titolo</b> : ' . $comic_001->title . '<br />';
 echo '<b>Serie</b> : ' . $comic_001->series . '<br />';
