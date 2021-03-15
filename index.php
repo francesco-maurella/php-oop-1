@@ -1,5 +1,8 @@
+
 <?php
-require_once 'data.php';
+require_once __DIR__ . '/database/classes.php';
+require_once __DIR__ . '/database/objects.php';
+require_once __DIR__ . '/app/server.php';
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +40,15 @@ require_once 'data.php';
                 <b>Lingua</b> : <?php echo $comic->language ?><br />
                 <b>Pagine</b> : <?php echo $comic->pages ?><br />
                 <b>Formato</b> : <?php echo $comic->format ?><br />
-                <b>Colori</b> : <?php echo $comic->colors ?><br />
+                <b>Colori</b> :
+                <?php
+                if ($comic->colors) {
+                  echo 'A colori';
+                } else {
+                  echo 'Bianco/Nero';
+                }
+                ?>
+                <br />
 
               </li>
               <?php
