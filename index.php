@@ -12,22 +12,25 @@ require_once __DIR__ . '/app/server.php';
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>PHP - OGGETTI [Comics Shop]</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
 
-    <main>
-      <h1>
+    <header>
+      <h1 class="title">
         <?php echo $comicsShop->name ?>
       </h1>
+    </header>
 
+    <main>
       <div class="catalogue">
         <!-- Sezione fumetti -->
         <section class="catalogue-element">
           <h2>FUMETTI</h2>
           <ul>
             <?php
-            foreach ($comicsShop->comics as $comic) {
+            foreach ($comicsShop->getComics() as $comic) {
               ?>
               <li>
                 <b>Titolo</b> : <?php echo $comic->title ?><br />
@@ -63,7 +66,7 @@ require_once __DIR__ . '/app/server.php';
         <h2>BLU-RAYS</h2>
         <ul>
           <?php
-          foreach ($comicsShop->blurays as $bluray) {
+          foreach ($comicsShop->getBlurays() as $bluray) {
             ?>
             <li>
               <b>Titolo</b> : <?php echo $bluray->title ?><br />
@@ -87,7 +90,7 @@ require_once __DIR__ . '/app/server.php';
         <h2>ACTION FIGURES & GAMES</h2>
         <ul>
           <?php
-          foreach ($comicsShop->aFigures as $afigure) {
+          foreach ($comicsShop->getAFigures() as $afigure) {
             ?>
             <li>
               <b>Nome</b> : <?php echo $afigure->modelname ?><br />

@@ -68,20 +68,29 @@ class Actionfigures  {
 
 class Catalogue  {
   public $name;
-  public $comics = [];
-  public $blurays = [];
-  public $aFigures = [];
+  private $comics = [];
+  private $blurays = [];
+  private $aFigures = [];
 
   public function __construct ($name) {
     $this->name = $name;
   }
-  public function addComic($comic) {
+  public function addComic(Comicbook $comic) {
       $this->comics[] = $comic;
   }
-  public function addBluray($bluray) {
+  public function addBluray(Bluray $bluray) {
       $this->blurays[] = $bluray;
   }
-  public function addAFigure($aFigure) {
+  public function addAFigure(Actionfigures $aFigure) {
       $this->aFigures[] = $aFigure;
+  }
+  public function getComics() {
+      return $this->comics;
+  }
+  public function getBlurays() {
+      return $this->blurays;
+  }
+  public function getAFigures() {
+      return $this->aFigures;
   }
 }
